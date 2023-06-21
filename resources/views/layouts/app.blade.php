@@ -18,10 +18,14 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
+            @if(session('status'))
+                <p class="w-full text-center bg-green-500 text-white pt-2 pb-2">{{session('status')}}</p>
+            @endif
+
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between">
                         {{ $header }}
                     </div>
                 </header>

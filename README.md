@@ -12,6 +12,11 @@
 - Views
 - Controllers
 
+**Packages used in this project:**
+
+- laravel/breeze
+- spatie/laravel-sluggable
+
 **Topics i want to implement at a later stadium:**
 
 1. Data Transfer Objects

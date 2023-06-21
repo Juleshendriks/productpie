@@ -23,6 +23,7 @@
 2. BASE64 Image upload with HMAC Filename
 3. Polymorphic Relationships
 4. API Endpoints
-5. JWT Authentication
-6. Authorization
+5. Resources
+6. JWT Authentication
+7. Authorization
 

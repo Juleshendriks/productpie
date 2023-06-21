@@ -19,7 +19,8 @@ class CategoriesController extends Controller
 
     public function show(Category $category)
     {
-        return view('categories.show', ['category' => $category]);
+//        dd($category->load('items'));
+        return view('categories.show', ['category' => $category->load('items')]);
     }
 
     public function create()

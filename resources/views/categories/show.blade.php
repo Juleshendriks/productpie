@@ -13,7 +13,7 @@
                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mx-1">Delete</button>
             </form>
             <a href="{{route('categories.edit', $category)}}" class="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-2 px-4 mx-2 rounded-full">Edit</a>
-            <a href="#" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Add Products</a>
+            <a href="{{route('items.create')}}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">Add Item</a>
 
         </div>
     </x-slot>
@@ -24,6 +24,15 @@
                 <div class="p-6 text-gray-900">
                     <p class="text-xl">{{$category->name}}</p>
                     <p class="mt-3">{{$category->description}}</p>
+                </div>
+                <div class="p-6">
+                    @if(count($category->items) > 0)
+                        @foreach($category->items as $item)
+                            <p>{{$item->name}}</p>
+                        @endforeach
+                    @else
+                        <p class="text-red-600">No items available</p>
+                    @endif
                 </div>
             </div>
         </div>

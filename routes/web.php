@@ -29,9 +29,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::middleware('auth')->group(function(){
 Route::resource('categories', CategoriesController::class);
-Route::resource('items', ItemsController::class);
+Route::resource('items', ItemsController::class)->middleware('hasCategories');
+});
+
 
 
 require __DIR__.'/auth.php';

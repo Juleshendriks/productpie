@@ -22,6 +22,9 @@
                 <p class="w-full text-center bg-green-500 text-white pt-2 pb-2">{{session('status')}}</p>
             @endif
 
+            @if(session('error'))
+                <p class="w-full text-center bg-red-500 text-white pt-2 pb-2">{{session('error')}}</p>
+            @endif
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white shadow">
